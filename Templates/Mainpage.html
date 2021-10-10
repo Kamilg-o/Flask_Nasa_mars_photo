@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <title>Mars Image</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <style>
+  body{background-image:url(https://cdn.wallpapersafari.com/80/50/bUlkrc.jpg)}
+.carousel-inner img {
+    width: 90%;
+    height: 90%;}
+
+<!--  .carousel-indicators{-->
+<!--  margin-left:auto;-->
+</style>
+</head>
+
+<body>
+<div id="boxing" style="margin-left:70px; margin-right:70px; margin-top:30px; background-color:lightgrey;">
+<div id="box" >
+      <div id="hello" style="text-align:center; font-size:30px; padding:20px; height:100px; background-color:darkgray;">
+          <div style="font-family:Monaco;" id="text">MARS IMAGE APP</div>
+      </div>
+      <h4 style="font-family:Monaco; text-align:center; margin-top:20px;" id="chosen">Chose by date</h4>
+</div>
+<div id="datebox" style="margin-left:500px; margin-right:500px;">
+    <form method="post" id="date" action="/resp/">
+    <label for="date1"></label>
+    <input type="date" id="date1" name="date" max="2021-10-08" placeholder="yyyy-mm-dd">
+    <button type="submit" class="btn btn-dark">SEND</button>
+    </form>
+</div>
+
+<div id="demo" class="carousel slide" data-ride="carousel" style="margin-left:100px; margin-right:20px;">
+
+  <h2 style="font-size:30px;font-family:Monaco; text-align:center;">NEWEST PHOTOS FROM MARS</h2>
+
+  <ul class="carousel-indicators">
+    <li data-target="#demo" data-slide-to="0" class="active"></li>
+    <li data-target="#demo" data-slide-to="1"></li>
+    <li data-target="#demo" data-slide-to="2"></li>
+    <li data-target="#demo" data-slide-to="3"></li>
+    <li data-target="#demo" data-slide-to="4"></li>
+    <li data-target="#demo" data-slide-to="5"></li>
+  </ul>
+
+  <div class="carousel-inner">
+    {% for picture in range(1)%}
+    <div class="carousel-item active">
+      <img src="{{pic[0]}}">
+    </div>
+    <div class="carousel-item">
+      <img src="{{pic[1]}}">
+    </div>
+    <div class="carousel-item">
+      <img src="{{pic[5]}}">
+    </div>
+    <div class="carousel-item">
+      <img src="{{pic[8]}}">
+    </div>
+    <div class="carousel-item">
+      <img src="{{pic[0]}}" >
+    </div>
+    {%endfor%}
+  </div>
+</div>
+</div>
+</body>
