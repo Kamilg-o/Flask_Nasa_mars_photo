@@ -30,9 +30,9 @@ class Actual:
         self.apic = []
 
     def actualisation(self):
-        data=datetime.datetime.today()-datetime.timedelta(days=10)
 
-        url = "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date={}&api_key=DEMO_KEY".format(data)
+
+        url = "https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=2019-5-9&api_key=DEMO_KEY"
 
         response = requests.request("GET", url)
 
